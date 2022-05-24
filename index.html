@@ -1,41 +1,86 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+  <title>TAI PRACTICE</title>
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<header>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</header>
+
+<section>
+
+</section>
+
+<script>
+
+  async function populate() {
+
+    const requestURL = 'https://ciaramartin7e4.github.io/taipractice/doc/maquinas.json';
+    const request = new Request(requestURL);
+
+    const response = await fetch(request);
+    const superHeroes = await response.json();
+
+    populateHeader(superHeroes);
+    populateHeroes(superHeroes);
+
+  }
+
+  function populateHeader(obj) {
+    const header = document.querySelector('header');
+    const myH1 = document.createElement('h1');
+    myH1.textContent = obj['Description'];
+    header.appendChild(myH1);
+
+    //   const myPara = document.createElement('p');
+    //   myPara.textContent = `Hometown: ${obj['wkucode']} // Formed: ${obj['wkuname']}`;
+    //   header.appendChild(myPara);
+  }
+
+  function populateHeroes(obj) {
+    const section = document.querySelector('section');
+    const heroes = obj['Payload'];
+
+    for (const hero of heroes) {
+      const myArticle = document.createElement('article');
+      const myH2 = document.createElement('h2');
+      const myPara1 = document.createElement('p');
+      const myPara2 = document.createElement('p');
+      const myPara3 = document.createElement('p');
+      const myList = document.createElement('ul');
+
+      myH2.textContent = hero.workunits.wkuname;
+      myPara1.textContent = `Secret identity: ${hero.workunits.sitname}`;
+      myPara2.textContent = `Age: ${hero.workunits.matcode}`;
+      myPara3.textContent = 'Superpowers:';
+
+      // const superPowers = hero.powers;
+      // for (const power of superPowers) {
+      //   const listItem = document.createElement('li');
+      //   listItem.textContent = power;
+      //   myList.appendChild(listItem);
+      // }
+
+      myArticle.appendChild(myH2);
+      myArticle.appendChild(myPara1);
+      myArticle.appendChild(myPara2);
+      myArticle.appendChild(myPara3);
+      // myArticle.appendChild(myList);
+
+      section.appendChild(myArticle);
+    }
+  }
+
+  populate();
+
+</script>
 </body>
-
 </html>
