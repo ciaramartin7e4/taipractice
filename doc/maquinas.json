@@ -1,10 +1,4 @@
 {
-  "Status": true,
-  "ID": 0,
-  "Description": "DEMO DATA Tai.Backend.Qplant.1223",
-  "ID_Msg_OK": "0", "ID_Msg_Error": "0",
-  "Data_Type": "JSON", "Value": "@OK@",
-  "ValueNumeric": null, "ValueType": 0,
   "Payload": [
   {
     "sbacode": "CIL",
@@ -375,4 +369,5 @@
     "sbaname": "Rebobinado",
     "sbatime": 60
   }
-]}
+]
+}
