@@ -1,23 +1,15 @@
 
 
 html {
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 body {
-  width: 800px;
   margin: 0 auto;
 }
 
-h1, h2 {
-  font-family: 'Faster One', cursive;
-}
-
-/* header styles */
-
 h1 {
-  font-size: 4rem;
-  text-align: center;
+  font-size: 3rem;
 }
 
 header p {
@@ -26,11 +18,10 @@ header p {
   text-align: center;
 }
 
-/* section styles */
-
-section article {
-  width: 33%;
+section div {
+  width: 100%;
   float: left;
+  display: flex;
 }
 
 section p {
@@ -45,4 +36,44 @@ h2 {
   font-size: 2.5rem;
   letter-spacing: -5px;
   margin-bottom: 10px;
+}
+#lista1{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  flex-wrap: wrap;
+}
+#machineName {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: flex-start;
+}
+#machineName:hover {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: flex-start;
+  transform: rotate(0) scale(1.2);
+}
+
+nav {
+  max-width: 100%;
+}
+nav {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  list-style-type: none;
+  float: left;
+  padding: 5px;
+
 }
