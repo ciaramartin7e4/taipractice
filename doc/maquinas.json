@@ -1,4 +1,13 @@
 {
+    "Status": true,
+    "ID": 0,
+    "Description": "DEMO DATA TAI.Backend.Qplant.1223",
+    "ID_Msq_OK": "0",
+    "ID_Msg_Error": "0",
+    "Data_Type": "JSON",
+    "Vale": "@CK@",
+    "ValueNumeric": null,
+    "ValueType": 0,
     "Payload": [
         {
             "sbacode": "CIL",
